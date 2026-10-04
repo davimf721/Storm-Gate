@@ -1,3 +1,10 @@
+> **Storm Gate:** this fork hosts [Storm Gate](stormgate/README.md), an
+> open-source Windows game compatibility runtime for macOS (Apple Silicon),
+> built using Wine and technologies from the Proton ecosystem. Everything
+> Storm Gate-specific lives in [`stormgate/`](stormgate/); the rest of this
+> repository is Valve's Proton tree, kept unchanged for rebasing.
+> ([Português](stormgate/README.pt-BR.md))
+
 Introduction
 ------------
 

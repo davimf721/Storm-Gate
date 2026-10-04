@@ -1,0 +1,6 @@
+/target/
+/build/
+/dist/
+/tests/windows/build/
+*.part
+.DS_Store

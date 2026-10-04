@@ -1,0 +1,45 @@
+# Storm Gate game profile template (schema 1).
+# Copy to compat/steam/<appid>/profile.toml for shared profiles, or to
+# ~/Library/Application Support/StormGate/games/<appid>.toml for local ones.
+# Validate with: stormgate profile validate --shared <file>
+#
+# Never put credentials or personal data in a profile.
+
+schema = 1
+
+[game]
+appid = 1091500
+name = "Example Game"
+# Relative to the install directory; detected automatically when omitted.
+# executable = "bin/x64/Game.exe"
+# arguments = ["-windowed"]
+
+[runtime]
+wine = "proton-wine-11"
+# Pin a side-by-side runtime version (useful for regressions).
+# version = "0.1.0"
+
+[graphics]
+# dxmt | dxvk | wined3d (d3d10/d3d11), dxvk | wined3d (d3d9), vkd3d-proton (d3d12)
+d3d11 = "dxmt"
+d3d12 = "vkd3d-proton"
+# moltenvk | kosmickrisp
+vulkan = "moltenvk"
+
+[sync]
+# server (default) | msync (opt-in until regression tested)
+backend = "server"
+
+[display]
+virtual_desktop = false
+# width = 1920
+# height = 1080
+retina = false
+
+[environment]
+# Extra variables; runtime-managed ones (WINEPREFIX, WINEDLLOVERRIDES, ...)
+# are rejected.
+# SOME_VARIABLE = "1"
+
+[dll_overrides]
+# xinput1_3 = "native,builtin"

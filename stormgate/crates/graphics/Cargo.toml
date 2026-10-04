@@ -1,0 +1,16 @@
+[package]
+name = "stormgate-graphics"
+description = "Graphics backend selection and configuration for Storm Gate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+serde.workspace = true
+stormgate-config.workspace = true
+stormgate-pe.workspace = true
+
+[lints]
+workspace = true
