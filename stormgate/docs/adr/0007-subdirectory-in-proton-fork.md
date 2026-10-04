@@ -13,11 +13,12 @@ behaviour. Components are built from pinned upstream sources listed in
 `stormgate/manifests/`. Larger parts of Proton's launcher may be reused once
 the macOS runtime works.
 
-The only additions outside `stormgate/` are a pointer at the top of the
-root `README.md` and Storm Gate's CI workflow, issue templates and PR
-template under `.github/`.
+The only changes outside `stormgate/` are the repository landing page
+(`README.md` presents Storm Gate; Valve's original README is preserved
+verbatim as `README.proton.md`) and Storm Gate's CI workflow, issue
+templates and PR template under `.github/`.
 
 ## Consequences
-- Rebasing on Proton never conflicts with Storm Gate code (at most the
-  README banner).
+- Rebasing on Proton never conflicts with Storm Gate code (at most
+  `README.md`, resolved by keeping ours and refreshing `README.proton.md`).
 - CI for Storm Gate is path-filtered to `stormgate/**`.
