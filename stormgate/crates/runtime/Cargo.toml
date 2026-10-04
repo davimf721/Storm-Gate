@@ -1,0 +1,22 @@
+[package]
+name = "stormgate-runtime"
+description = "Side-by-side runtime management for Storm Gate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+serde.workspace = true
+sha2.workspace = true
+stormgate-config.workspace = true
+stormgate-graphics.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

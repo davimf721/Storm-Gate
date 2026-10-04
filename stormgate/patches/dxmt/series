@@ -1,0 +1,3 @@
+# Patch queue for dxmt, applied in order by scripts/lib/common.sh.
+# One file name per line. Every patch needs the header described in
+# patches/README.md.

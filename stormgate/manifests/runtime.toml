@@ -1,0 +1,69 @@
+# Storm Gate runtime manifest.
+#
+# Every component is pinned to a full commit hash. Wine, DXVK and
+# VKD3D-Proton use the same commits as the Proton 11 tree this repository
+# is forked from (see `git ls-tree HEAD wine dxvk vkd3d-proton` at the
+# repository root), so the macOS runtime tracks Valve's patch set.
+#
+# Keep in sync with sources.lock (checked by `cargo test`).
+# Update with: scripts/update-sources.sh <name> <commit>
+
+[runtime]
+version = "0.0.1"
+
+[sources.wine]
+repository = "https://github.com/ValveSoftware/wine"
+ref = "proton_11.0"
+commit = "dc26e61847081a1b5cb0733dc30feba6ee575482"
+license = "LGPL-2.1-or-later"
+
+[sources.dxmt]
+repository = "https://github.com/3Shain/dxmt"
+ref = "v0.80"
+commit = "589adb780354b461645b29999cefaf533594ee99"
+license = "Zlib"
+
+[sources.dxvk]
+repository = "https://github.com/doitsujin/dxvk"
+ref = "proton-11 support branch"
+commit = "a6764047e587178283fcde4073ae6e1410af594f"
+license = "Zlib"
+
+# DXVK fork with MoltenVK workarounds (D3D9/10/11 -> Vulkan on macOS).
+# Upstream DXVK 2.x needs Vulkan features MoltenVK does not expose yet, so
+# scripts/build-dxvk.sh builds this flavour by default (DXVK_FLAVOR=macos).
+[sources.dxvk-macos]
+repository = "https://github.com/Gcenx/DXVK-macOS"
+ref = "master"
+commit = "8f1e28deed3ad30802f7e1bdff428ec14e6e7817"
+license = "Zlib"
+
+[sources.vkd3d-proton]
+repository = "https://github.com/HansKristian-Work/vkd3d-proton"
+ref = "proton-11 support branch"
+commit = "212991fc2c266bc0d59f4c4ce8f80f7126508d71"
+license = "LGPL-2.1-or-later"
+experimental = true
+
+[sources.moltenvk]
+repository = "https://github.com/KhronosGroup/MoltenVK"
+ref = "v1.4.2"
+commit = "db66022459ffb663aa2b50f6b018bc2e124f5edf"
+license = "Apache-2.0"
+
+[sources.wine-msync]
+repository = "https://github.com/marzent/wine-msync"
+ref = "main"
+commit = "be7f3e2ff40670018cd7aa9042bad487fa7a83ec"
+license = "LGPL-2.1-or-later"
+optional = true
+
+# Reference implementation for D3D12 -> Vulkan -> MoltenVK on Apple Silicon.
+# Used as a source of patches for graphics/d3d12, never shipped as-is.
+[sources.vkd3d-proton-macos]
+repository = "https://github.com/metalsharp/VKD3D-Proton-MacOS"
+ref = "main"
+commit = "ad7b421c4aed38f4d6c23f77f895ef6b4240363b"
+license = "LGPL-2.1-or-later"
+experimental = true
+optional = true

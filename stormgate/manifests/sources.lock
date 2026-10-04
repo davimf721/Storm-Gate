@@ -1,0 +1,10 @@
+# name                repository                                              commit
+# Generated from runtime.toml; consumed by scripts/lib/common.sh.
+wine                  https://github.com/ValveSoftware/wine                   dc26e61847081a1b5cb0733dc30feba6ee575482
+dxmt                  https://github.com/3Shain/dxmt                           589adb780354b461645b29999cefaf533594ee99
+dxvk                  https://github.com/doitsujin/dxvk                       a6764047e587178283fcde4073ae6e1410af594f
+dxvk-macos            https://github.com/Gcenx/DXVK-macOS                     8f1e28deed3ad30802f7e1bdff428ec14e6e7817
+vkd3d-proton          https://github.com/HansKristian-Work/vkd3d-proton       212991fc2c266bc0d59f4c4ce8f80f7126508d71
+moltenvk              https://github.com/KhronosGroup/MoltenVK                db66022459ffb663aa2b50f6b018bc2e124f5edf
+wine-msync            https://github.com/marzent/wine-msync                   be7f3e2ff40670018cd7aa9042bad487fa7a83ec
+vkd3d-proton-macos    https://github.com/metalsharp/VKD3D-Proton-MacOS        ad7b421c4aed38f4d6c23f77f895ef6b4240363b

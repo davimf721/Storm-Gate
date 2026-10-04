@@ -1,0 +1,34 @@
+name: "Storm Gate: regression"
+description: Something worked in an earlier runtime and broke in a newer one
+title: "[Regression] "
+labels: ["stormgate", "regression"]
+body:
+  - type: input
+    id: working
+    attributes:
+      label: Working version
+    validations:
+      required: true
+  - type: input
+    id: broken
+    attributes:
+      label: Broken version
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: "`stormgate logs bundle` from both versions if possible. Roll back with `stormgate runtime use <version>`."

@@ -1,0 +1,23 @@
+[package]
+name = "stormgate-diagnostics"
+description = "Environment doctor, structured logs and sanitized log bundles for Storm Gate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+regex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+stormgate-config.workspace = true
+stormgate-runtime.workspace = true
+thiserror.workspace = true
+zip.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,43 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.82"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/davimf721/Storm-Gate"
+authors = ["Storm Gate contributors"]
+
+[workspace.dependencies]
+stormgate-config = { path = "crates/config" }
+stormgate-pe = { path = "crates/pe" }
+stormgate-graphics = { path = "crates/graphics" }
+stormgate-runtime = { path = "crates/runtime" }
+stormgate-process = { path = "crates/process" }
+stormgate-prefix = { path = "crates/prefix" }
+stormgate-steam = { path = "crates/steam" }
+stormgate-input = { path = "crates/input" }
+stormgate-diagnostics = { path = "crates/diagnostics" }
+stormgate-compatibility = { path = "crates/compatibility" }
+
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tempfile = "3"
+thiserror = "2"
+toml = "0.8"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[profile.release]
+lto = "thin"

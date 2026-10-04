@@ -1,0 +1,64 @@
+name: "Storm Gate: game report"
+description: Report how a Windows game runs on macOS with Storm Gate
+title: "[Game] <name> (<appid>)"
+labels: ["stormgate", "game-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing! Follow tests/games/README.md. Never include passwords or tokens.
+  - type: input
+    id: game
+    attributes:
+      label: Game
+    validations:
+      required: true
+  - type: input
+    id: appid
+    attributes:
+      label: Steam AppID
+      description: Leave empty for non-Steam games.
+  - type: input
+    id: mac
+    attributes:
+      label: Mac
+      placeholder: MacBook Air M1, 8 GB
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "15.6"
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime version
+      description: Output of `stormgate runtime list`
+    validations:
+      required: true
+  - type: input
+    id: backend
+    attributes:
+      label: Graphics backend
+      placeholder: dxmt / dxvk / vkd3d-proton / wined3d
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: [PLATINUM, GOLD, SILVER, BRONZE, BROKEN, BLOCKED]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Attach the zip from `stormgate logs bundle <appid>` (review it first).

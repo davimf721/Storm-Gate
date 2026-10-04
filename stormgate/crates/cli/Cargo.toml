@@ -1,0 +1,34 @@
+[package]
+name = "stormgate-cli"
+description = "Storm Gate command line interface"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "stormgate"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+stormgate-compatibility.workspace = true
+stormgate-config.workspace = true
+stormgate-diagnostics.workspace = true
+stormgate-graphics.workspace = true
+stormgate-input.workspace = true
+stormgate-pe.workspace = true
+stormgate-prefix.workspace = true
+stormgate-process.workspace = true
+stormgate-runtime.workspace = true
+stormgate-steam.workspace = true
+
+[dev-dependencies]
+stormgate-pe.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

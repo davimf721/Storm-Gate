@@ -1,0 +1,20 @@
+[package]
+name = "stormgate-prefix"
+description = "Isolated Wine prefix management for Storm Gate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+stormgate-config.workspace = true
+stormgate-process.workspace = true
+stormgate-runtime.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true
